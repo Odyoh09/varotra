@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Empêche le débordement horizontal sur mobile */
+  html, body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #fafaf8;
+    color: #1a1a1a;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Box-sizing universel */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* Images responsives par défaut */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-orange-600 text-white px-5 py-2.5 rounded-xl font-medium hover:bg-orange-700 transition-all duration-200 shadow-sm hover:shadow-md active:scale-95;
+  }
+  .btn-secondary {
+    @apply border border-gray-200 text-gray-700 px-5 py-2.5 rounded-xl font-medium hover:bg-gray-50 transition-all duration-200 active:scale-95;
+  }
+  .card {
+    @apply bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+  .input {
+    @apply w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-orange-400 transition-all;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+
+  /* Container responsive standard */
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
